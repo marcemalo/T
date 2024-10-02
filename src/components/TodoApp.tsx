@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
+
+
+
 interface Todo {
     name: string;
     hour: number;
@@ -39,12 +42,44 @@ const TodoApp: React.FC = () => {
             };
             setTodos([...todos, newTodo]);
             setTodoInput('');
+
+            Toastify({
+                text: "QOSHOLDIN 💀💀💀",
+                duration: 3000,
+                destination: "https://github.com/apvarun/toastify-js",
+                newWindow: true,
+                close: true,
+                gravity: "top",
+                position: "left", 
+                stopOnFocus: true, 
+                style: {
+                  background: "linear-gradient(to right, #00b09b, #96c9)",
+                },
+                onClick: function(){} 
+              }).showToast();
+
+          
+
         } else {
-            alert('Please enter a valid todo!');
+            Toastify({
+                text: "JIGARIM KOZINI OCH BOSH MALUMOT YUBORMA 🤡🤡🤡🤡",
+                duration: 3000,
+                destination: "https://github.com/apvarun/toastify-js",
+                newWindow: true,
+                close: true,
+                gravity: "top",
+                position: "left", 
+                stopOnFocus: true, 
+                style: {
+                  background: "linear-gradient(to right, #00b09b, #96c9)",
+                },
+                onClick: function(){} 
+              }).showToast();
         }
+
     };
 
-   
+
 
     const toggleCompletion = (index: number) => {
         const updatedTodos = todos.map((todo, i) => (i === index ? { ...todo, isCompleted: !todo.isCompleted } : todo));
@@ -64,15 +99,25 @@ const TodoApp: React.FC = () => {
 
     return (
         <div className="todolist">
-            <h1>Todo App</h1>
-            <form onSubmit={createTodo}>
+            <div className="header">
+            <h1>Todo Ismoiljon</h1>
+            
+            </div>
+           <div className='todo-form'>
+          <div>
+          <form onSubmit={createTodo}>
                 <input
                     value={todoInput}
                     onChange={e => setTodoInput(e.target.value)}
                     placeholder="Enter todo"
                 />
-                <button type="submit">Add todo</button>
+                <button className="button-54" role="button" type="submit">Add todo</button>
             </form>
+          </div>
+          <div className="todo-clear">
+           <a className='q' href="https://www.flipkart.com/snb-screem-mask-party/p/itm36883a1ff7f8b"> <button className="button-86" role="button">Clear</button></a> 
+          </div>
+           </div>
 
             <div className="todo-actions">
                 <select value={sortOption} onChange={e => setSortOption(e.target.value)}>
